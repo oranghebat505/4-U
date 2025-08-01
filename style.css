@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #fdfbfb, #ffe3e3);
+    color: #333;
+    line-height: 1.8;
+    overflow-x: hidden;
+    padding: 40px 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.tagline {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    color: #aa4465;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 2em;
+    display: block;
+}
+
+#playButton {
+    padding: 14px 30px;
+    font-size: 18px;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+#playButton:hover {
+    background-color: #ff4757;
+}
+
+#introText {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+    font-size: 1.1em;
+    text-align: center;
+    display: none;
+}
+
+#introText.visible {
+    display: block;
+    animation: fadeIn ease 1s;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.2s ease;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 1s ease;
+}
+
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(200, 200, 200, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #ff5e78;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.petal {
+    position: fixed;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('petal-removebg-preview.png');
+    background-size: cover;
+    opacity: 0.9;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.fade-section .visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-section .hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}

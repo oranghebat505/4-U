@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>.</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #continueButton {
+      display: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      opacity: 0;
+      transition: background-color 0.3s ease, opacity 1s ease;
+    }
+    #continueButton.show {
+      display: inline-block;
+      opacity: 1;
+    }
+    #continueButton:hover {
+      background-color: #ff4757;
+    }
+  </style>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+
+  .fade-section .visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-section .hidden {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .falling-petal {
+    position: fixed;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('petal-removebg-preview.png');
+    background-size: cover;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+<script>
+  // Create falling petals
+  document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < 20; i++) {
+      const petal = document.createElement("div");
+      petal.classList.add("falling-petal");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+      petal.style.opacity = Math.random();
+      petal.style.transform = `translateY(-50px) rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(petal);
+    }
+  });
+</script>
+  <div class="intro" id="introSection">
+    <p class="tagline" id="tagline"></p>
+    <button id="playButton">▶ Open</button>
+    <p id="introText" style="display: none">Selamat datang... I hope you read this.(pwis🙇‍♂️)</p>
+    <button id="continueButton">I wrote this for a special person</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="The 1975 - About You (Official).mp3" type="audio/mpeg" />
+  </audio>
+  <div class="audio-controls hidden">
+    <audio id="bg-music" loop>
+      <source src="The 1975 - About You (Official).mp3" type="audio/mpeg" />
+    </audio>
+    <button id="muteBtn">🔊</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+  </div>
+
+  <div id="mainContent" class="fade-section hidden" style="opacity: 0; transform: translateY(30px); transition: opacity 1.5s ease-out, transform 1.5s ease-out;">
+    <h1 class="hidden">FAIHA SEKAR LESTARI</h1>
+    <p class="hidden">Aku pun bingung harus mulai dari mana. Tapi yang jelas, aku nulis ini bukan buat drama, atau buat bikin kamu baper. Bukan buat nyari simpati atau bikin kamu salah paham. Aku cuma pengin jujur sama apa yang sering kali aku rasain diam-diam. Aku mikirin kamu lebih sering dari yang kamu bayangin. Kadang pas lagi hujan, kadang di tengah tawa. Nggak ada pola, cuma muncul aja. Karena kamu udah jadi bagian kecil yang nggak pernah benar-benar hilang dari pikiran aku.</p>
+<p class="hidden">Aku sadar, aku nggak bisa maksa kamu buat ngerti atau bahkan ngerasain hal yang sama. Aku cuma pengen kamu tahu kalau keberadaanmu itu nggak pernah sepele. Kadang satu kalimatmu aja cukup buat nyelametin hari yang hampir kacau . Kadang satu tatapanmu bisa bikin aku lebih tenang dari ribuan kata yang orang lain ucapin (maap alay).</p>
+<p class="hidden">Aku tahu aku bukan siapa-siapa. Aku tahu, kamu punya dunia yang luas dan orang-orang yang lebih penting. Tapi entah kenapa, aku selalu punya keinginan buat jadi tempat kamu kembali. Tempat yang bisa kamu datangi tanpa takut dihakimi, tanpa harus jelasin kenapa kamu lelah hari ini.</p>
+<p class="hidden">Aku juga paham, bisa jadi semuanya cuma akan jadi perasaan sepihak. Bisa jadi kamu nggak pernah tahu, atau bahkan nggak pernah peduli. Tapi kalau suatu hari nanti kamu ngerasain yang sama—walau cuma sedikit—aku akan tetap di sini</p>
+<p class="hidden">Jadi, untuk sekarang, biarkan aku ucapkan satu hal kecil tapi tulus: terima kasih. Karena kamu udah hadir dengan cara yang nggak biasa. Kamu bikin hari-hariku jadi lebih hidup. Bukan karena kamu sempurna, tapi karena kamu nyata. Dan itu lebih dari cukup buat aku.</p>
+
+<h1 class="hidden">TENTANG KAMU</h1>
+  <p class="hidden">Kamu itu unik, meskipun sering lupa seberapa berharganya dirimu. Cara kamu tertawa bisa bikin ruangan yang sunyi terasa hangat. Cara kamu bercerita bikin orang betah dengerin lama-lama. Aku sering menangkap hal-hal kecil yang mungkin kamu anggap sepele, tapi justru itu yang bikin kamu beda dari yang lain.</p> 
+  <p class="hidden">Kamu nggak suka jadi pusat perhatian, tapi tetap aja orang-orang tertarik padamu. Mungkin karena kamu tampil apa adanya, tanpa pura-pura. Atau karena kamu punya cara sendiri buat nunjukin kepedulian, bahkan tanpa sadar. Dan jujur, itu salah satu hal yang paling aku suka dari kamu.</p> 
+  <p class="hidden">Kamu kuat, bahkan saat kamu kelihatan rapuh. Kamu tetap peduli, meskipun kadang kamu sendiri butuh dipedulikan. Aku kagum sama caramu berusaha, walaupun nggak semua orang ngerti seberapa berat beban yang kamu tanggung.</p> 
+  <p class="hidden">Aku tahu kamu nggak sempurna. Tapi justru karena itu aku makin kagum. Karena kamu tetap melangkah, walaupun kadang harus tersandung. Karena kamu tetap tersenyum, meski hatimu lelah. Dan buatku, itu bukti kalau kamu luar biasa dengan caramu sendiri.</p> 
+  <p class="hidden">Aku nulis semua ini bukan karena aku pengin kamu baca. Tapi supaya aku selalu inget—bahwa pernah ada satu nama, satu wajah, satu sosok… yang buatku begitu berarti. Dan mungkin akan terus berarti, meskipun kamu nggak pernah tahu.</p>
+  <h2 class="hidden" style="text-align: center; margin-top: 40px; color: #ff5e78;">Thank You for Reading 💖</h2>
+  <p class="hidden" style="text-align: center; font-style: italic; color: #333;">Kamu adalah seseorang yang luar biasa. Aku cuma ingin kamu tahu itu.</p>
+  <p class="hidden" style="text-align: center; font-style: italic; color: #333;">- Dari seseorang yang selalu memperhatikanmu.</p>
+    <div class="heart-pulse hidden"></div>
+</div>
+
+  
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const taglineText = "I have something to say...";
+      const taglineEl = document.getElementById("tagline");
+      let i = 0;
+      function typeTagline() {
+        if (i < taglineText.length) {
+          taglineEl.textContent += taglineText.charAt(i);
+          i++;
+          setTimeout(typeTagline, 100);
+        }
+      }
+      typeTagline();
+    });
+
+    const playButton = document.getElementById("playButton");
+    const continueButton = document.getElementById("continueButton");
+    const introText = document.getElementById("introText");
+    const mainContent = document.getElementById("mainContent");
+    const audio = document.getElementById("bg-music");
+
+    playButton.addEventListener("click", function () {
+      playButton.style.display = "none";
+      introText.style.display = "block";
+      introText.style.opacity = 0;
+      introText.style.transition = "opacity 1.5s ease";
+      setTimeout(() => introText.style.opacity = 1, 50);
+      audio.play().catch(() => {});
+
+      continueButton.classList.add("show");
+    });
+
+    continueButton.addEventListener("click", function () {
+  document.getElementById("introSection").style.display = "none";
+  mainContent.classList.remove("hidden");
+  mainContent.classList.add("fade-in");
+  requestAnimationFrame(() => {
+    mainContent.style.opacity = "1";
+    mainContent.style.transform = "translateY(0)";
+  });
+
+  const revealElements = document.querySelectorAll("#mainContent .hidden");
+  let index = 0;
+
+  function revealNextSlowly() {
+    if (index < revealElements.length) {
+      revealElements[index].classList.remove("hidden");
+      revealElements[index].classList.add("visible");
+      index++;
+      setTimeout(revealNextSlowly, 800);
+    }
+  }
+
+  revealNextSlowly();
+
+  function fastReveal() {
+    revealElements.forEach((el) => {
+      if (el.classList.contains("hidden")) {
+        el.classList.remove("hidden");
+        el.classList.add("visible");
+      }
+    });
+    
+  }
+
+  window.addEventListener("scroll", fastReveal);
+});
+    window.removeEventListener("scroll", fastReveal);
+  
+
+  window.addEventListener("scroll", fastReveal);
+;
+    window.removeEventListener("scroll", fastReveal);
+  
+
+    window.addEventListener("scroll", function () {
+      const elements = document.querySelectorAll(".hidden");
+      const windowHeight = window.innerHeight;
+      elements.forEach((el) => {
+        const position = el.getBoundingClientRect().top;
+        if (position < windowHeight - 100) {
+          el.classList.add("visible");
+          el.classList.remove("hidden");
+        }
+      });
+    });
+
+    
+  </script>
+</body>
+</html>
